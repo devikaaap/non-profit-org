@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Profit Organization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body background="non_profit_organization_cover.jpeg">
+    <!-- Navigation Bar -->
+    
+    <nav>
+        <ul>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#programs">Programss</a></li>
+            <li><a href="#events">Events</a></li>
+        </ul>
+    </nav>
+    <br><br>
+    <div class="image">
+        <img src="ngo.png">
+
+    </div>
+    
+
+    <!-- Mission Section -->
+    <section id="mission" class="section">
+        <h1>Mission</h1>
+        <p>Let us build a better world together</p>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section">
+        <h2>Programs</h2>
+        <ul>
+            <li>Clothes Distribution</li>
+            <br>
+            <li>Food Distribution</li>
+            <br>
+            <li>Animal Adoption</li>
+        </ul>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <h2>Events</h2>
+        <div id="event-list">
+            <!-- JavaScript will populate events here -->
+        </div>
+    </section>
+
+    <!-- JavaScript to Fetch Events -->
+    <script>
+        // Fetch events from API or hardcoded array
+        const events = [
+            { name: "Clothes Distribution", date: "2024-03-20", location: "Madhapur" },
+            { name: "Food Distribution", date: "2024-04-05", location: "Gachibowli" },
+            { name: "Animal Adoption", date: "2024-04-15", location: "Jubilee hills" }
+        ];
+
+        const eventList = document.getElementById('event-list');
+
+        events.forEach(event => {
+            const eventItem = document.createElement('div');
+            eventItem.classList.add('event');
+            eventItem.innerHTML = `
+                <h3>${event.name}</h3>
+                <p><strong>Date:</strong> ${event.date}</p>
+                <p><strong>Location:</strong> ${event.location}</p>
+            `;
+            eventList.appendChild(eventItem);
+        });
+    </script>
+</body>
+</html>
